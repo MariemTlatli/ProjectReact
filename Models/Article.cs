@@ -2,11 +2,13 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 public class Article
 {
-    public string Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public int Quantity { get; set; }
-    //public string CreatedById { get; set; }
-  //  public User CreatedBy { get; set; }
-   // public ICollection<ServiceOrder> ServiceOrders { get; set; } = new List<ServiceOrder>();
+    public int Id { get; set; }
+    public string Categorie { get; set; }
+    public int price { get; set; }
+    public int quantite { get; set; }
+    public string CreatedById { get; set; }
+    public User CreatedBy { get; set; }
+     public int ServiceOrderID { get; set; }
+    // public ServiceOrder ServiceOrder { get; set; }
+
 }
