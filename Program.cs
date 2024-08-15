@@ -45,17 +45,7 @@ builder.Services.AddSwaggerGen(option =>
         }
     });
 });
-// Configuration de CORS pour autoriser toutes les origines, méthodes et en-têtes
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAllOrigins",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-        });
-});
+
 
 // Configuration d'Entity Framework Core pour utiliser SQL Server avec la chaîne de connexion spécifiée
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -95,6 +85,18 @@ builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminPolicy", policy => policy.RequireRole("Admin"));
     options.AddPolicy("UserPolicy", policy => policy.RequireRole("User"));
+});
+
+// Configuration de CORS pour autoriser toutes les origines, méthodes et en-têtes
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder =>
+        {
+            builder.AllowAnyOrigin()
+                   .AllowAnyMethod()
+                   .AllowAnyHeader();
+        });
 });
 builder.Services.AddScoped<TokenService>();
 
