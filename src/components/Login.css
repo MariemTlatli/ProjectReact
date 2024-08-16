@@ -1,0 +1,55 @@
+.login-section {
+    background-color: #f0f2f5;
+    padding: 50px 0;
+  }
+  
+  .form-outline input {
+    border-radius: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .form-outline input:focus {
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+  }
+  
+  .login-button {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    background-color: #007bff;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .modal-content {
+    border-radius: 0.75rem;
+  }
+  
+  .modal-header,
+  .modal-footer {
+    border: none;
+    background-color: #f8f9fa;
+  }
+  
+  .modal-title {
+    font-weight: bold;
+  }
+  
+  .btn-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: #000;
+  }
+  
+  .btn-close:hover {
+    color: #dc3545;
+  }
+  
