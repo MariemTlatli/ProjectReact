@@ -90,20 +90,16 @@ builder.Services.AddAuthorization(options =>
 // Configuration de CORS pour autoriser toutes les origines, méthodes et en-têtes
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAllOrigins",
-        builder =>
-        {
-            builder.AllowAnyOrigin()
-                   .AllowAnyMethod()
-                   .AllowAnyHeader();
-        });
+    options.AddPolicy("AllowReactApp",
+        builder => builder.WithOrigins("http://localhost:3000")
+                          .AllowAnyHeader()
+                          .AllowAnyMethod());
 });
 builder.Services.AddScoped<TokenService>();
 
 var app = builder.Build();
+app.UseCors("AllowReactApp");
 
-// Appliquer la politique CORS configurée précédemment
-app.UseCors("AllowAllOrigins");
 
 // Configuration du pipeline HTTP pour l'environnement de développement
 if (app.Environment.IsDevelopment())
